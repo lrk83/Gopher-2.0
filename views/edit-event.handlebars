@@ -1,0 +1,59 @@
+<div class="card is-centered has-text-centered" id="edit-event-card">
+  <div class="card-header title is-centered" id="edit-event-header">
+  <h2>
+    Edit Event
+  </h2>
+  </div>
+  <div class="card-content" id="edit-event-content">
+
+<div class="field">
+  <label class="label">Title</label>
+  <div class="control">
+    <input class="input" type="text" name="event-title" value="{{event.title}}">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Description</label>
+  <div class="control">
+    <textarea class="textarea" name="event-description">{{event.event_description}}</textarea>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Category</label>
+      <div class="control" id="categorySection">
+              <div class="select">
+                <select class="dropdown" name = "dropdown">
+                  <option>--</option>
+                  <option id="newCategory">Add a new category</option>
+                </select>
+              </div>
+            </div>
+</div>
+
+<div class="field">
+  <label class="label">Adress</label>
+  <div class="control">
+    <input class="input" type="text" name="event-location-street" value="{{event.address}}">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Date</label>
+  <div class="control">
+    <input class="input" type="date" name="event-date" min="{{date}}"value="{{event.date}}">
+  </div>
+</div>
+
+<div class="field is-grouped">
+  <div class="control" id="edit-post-btns">
+    <button class="button is-link" id="submit-edit-btn">Submit</button>
+    <button class="button is-link" id="delete-post-btn">Delete Event</button>
+  </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="/javascript/edit-event.js"></script>
+<script src="/javascript/delete-event.js"></script>

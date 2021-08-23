@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/stylesheets/newstyle.css">
+    <title>Gopher</title>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <div class="logo">
+        <h1>
+            <a href="/">Gopher.</a> 
+        </h1> <img src="/images/96860-groundhog-day-cartoon-gopher-for-events-near-me.png">
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <!-- Trigger/Open The Gopher It Modal -->
+                    <button id="modalBtn">Why Gopher It</button>
+                </li>
+                
+                <li>
+                    <!-- Trigger/Open The Connect Modal -->
+                    <button id="connectBtn">Connect</button>
+                </li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                {{#if loggedIn}}
+
+                    <li>
+                        <a href="/dashboard">Dashboard</a>
+                    </li>
+                    <li>
+                        <button id="logout" class="btn-no-style">logout</button>
+                    </li>
+
+                {{else}}
+
+                    <li>
+                        <a href="/login">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/login">login</a>
+                    </li>
+
+                {{/if}}
+            </ul>
+        </nav>      
+    </header>
+
+    <main>
+      {{{ body }}}
+    </main>
+
+    <footer>
+        <div class="content has-text-centered is-small">
+            <p>
+            <strong>Bulma by <a href="https://lrk83.github.io/Portfolio/">Lukas Keel</a>, <a href="https://github.com/BriagasD98">David Briagas</a>, <a href="https://github.com/fbenjaminmorris">Frank Benjamin Morris</a>, and <a href="">Diana Olivas</a></strong>.
+            </p>
+            <strong>Thanks for visiting!</strong>
+        </div>
+    </footer>
+
+    <!-- The Modal Background-->
+    <div id="modalBG" class="modal-bg">
+
+    <!-- Gopher It Modal content -->
+        <div class="modal-content first-modal">
+            <div class="modal-header">
+                <div class="title"><h4>Why Gopher 2.0 It</h4></div>
+            </div>
+            <div class="modal-body">
+                <p>
+                What is and why should you Gopher? Gopher help take the guess work out of trying find something to do.
+                This site helps you and friends make plans easier and find fun events all can agree on.
+                Why Gopher? Why not? Put in a date and chose a category and let use do the work for you. With our new updated version Gopher 2.O
+                you can now create your own event. Now you gave have your own fun and with new comment section people can talk about events and you can share 
+                your experience too. 
+     
+                </p>
+            </div>
+            <span id="modalClose" class="modal-close">X</span>
+        </div>
+
+    </div>
+
+    <!--Connect Modal Content-->
+    <div id="connectModalBG" class="modal-bg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="title"><h4>Connect</h4></div>
+            </div>
+            <div class="modal-body">
+                <h5>Please reach out with any questions or concerns!</h5>
+                <p><a href="Fourcodingstudent@hotmail.com">Fourcodingstudent@hotmail.com</a></p>
+                <p><a href="Caddyshackgopher@billmurry.com">Caddyshackgopher@billmurry.com</a></p>
+                <p><a href="PunxsutawneyPhill@shadow.net">PunxsutawneyPhill@shadow.net</a></p>
+            </div>
+            <span id ="connectClose" class="modal-close">X</span>
+        </div>
+
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+    <script src="/javascript/modal.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<div class="single-event is-centered has-text-centered" id="single-event-card">
+  <div class="title is-centered" id="single-event-header">
+            <h2 class="has-text-black">{{event.title}}<h2></h2>
+        </div>
+        <div class="is-centered" id="single-event-card-content">
+          <div class="content is-centered" id="single-event-card-text-content">
+              <p>{{event.event_description}}</p>
+              <div class="columns is-centered">
+                <div class="column is-centered">
+                  Date: {{event.date}}
+                </div>
+                <div class="column is-centered">
+                  Address: {{event.address}}
+                </div>
+              </div>
+          </div>
+          <!--HERES THE iFRAME-->
+          <div class="media">
+            <div class='iframe'>
+              <iframe src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyCNGVJ1YMzTfo0ANBH6sPMd9kmnZwqUh2o&q={{event.address}}'
+                style = border: 0
+                loading= lazy></iframe>
+            </div>
+          </div>
+        </div>
+</div>
+
+<article class="media" id="comments">
+  <div class="title is-centered" id="single-event-header">
+      <h2>Comments<h2></h2>
+  </div>
+  <div class="media-content" id="old-comments">
+    {{#each event.comments}}
+    <div id="comment-box">
+      <figure class="media-left">
+          <p class="image is-32x32">
+            <img src="/{{img}}">
+          </p>
+      </figure>
+      <div class="contents is-$white">
+        <p class="is-$white">
+          <strong>{{user.username}}</strong>
+          <br>
+          {{comment_text}}
+          <br>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  {{#if loggedIn}}
+
+  <article class="media" id="new-comment">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="/images/96860-groundhog-day-cartoon-gopher-for-events-near-me.png">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="field">
+        <p class="control">
+          <textarea class="textarea" placeholder="Add a comment..." name="comment-body"></textarea>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <button class="button" id="submit-comment">Post comment</button>
+        </p>
+      </div>
+    </div>
+  </article>
+
+{{/if}}
+</article>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

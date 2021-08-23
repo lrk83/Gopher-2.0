@@ -1,0 +1,81 @@
+<div class="card is-centered has-text-centered" id="create-event-card">
+  <div class="card-header title is-centered" id="create-event-header">
+  <h2>
+    Create New Event
+  </h2>
+  </div>
+  <div class="card-content" id="edit-event-content">
+
+<div class="field">
+  <label class="label" for="event-title">Title</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Enter your event title"  id="event-title" name="event-title">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label" for="event-description">Description</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Enter a brief description of your event" name="event-description"></textarea>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Category</label>
+      <div class="control" id="categorySection">
+              <div class="select">
+                <select class="dropdown" name = "dropdown" id="category-selector">
+                  <option>--</option>
+                  <option id="newCategory">Add a new category</option>
+                </select>
+              </div>
+            </div>
+</div>
+
+<div class="field">
+  <label class="label" for="event-location-street">Adress</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Enter the address of your event" name="event-location-street">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label" for="event-date">Date</label>
+  <div class="control">
+    <input class="input" type="date" name="event-date" min="{{date}}">
+  </div>
+</div>
+
+
+<div class="field is-grouped">
+  <div class="control" id="new-post-btns">
+    <button type="submit" class="button is-link" id="submit-button">Create</button>
+    <button class="button is-link" id="cancel-new-event-btn">Cancel</button>
+  </div>
+</div>
+</div>
+
+{{#if events.length}}
+<article class="media" id="event-section">
+  <div class="title is-centered" id="single-event-header">
+      <h2>Your Events<h2></h2>
+  </div>
+  <div class="media-content" id="events">
+    {{#each events}}
+    <div id="event-box">
+      <div class="contents is-$white">
+        <div class="title">
+                <a href="/event/{{id}}"><h2>{{title}}</h2></a>
+            </div>
+            <div class ='edit'>
+                <a href="/dashboard/edit/{{id}}" class="edit-link">Edit Event</a>
+            </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</article>
+{{/if}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="/javascript/add-event.js"></script>

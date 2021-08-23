@@ -1,0 +1,52 @@
+
+    
+    <div class="card is-centered has-text-centered" id="home-search-card">
+        <div class="card-header title is-centered" id="home-search-header">
+        <h2>
+          Search for Events Near You!
+        </h2>
+        </div>
+
+        <section class="is-centered" id="search-content-section">
+      <div class="columns is-centered">
+        <div class="column is-8 is-centered register">
+          <div class="field has-text-centered">
+            <label class="label has-text-white">Date</label>
+            <div class="control">
+              <input class="is-medium" type="date" name="date" min="{{date}}">
+            </div>
+          </div>
+
+          <div class="field has-text-centered">
+            <label class="label has-text-white">Category</label>
+            <div class="control">
+              <div class="select">
+                <select class="dropdown" name = "dropdown">
+                      {{#each categories}}
+                          <option value = "{{id}}"> {{title}}</option>
+                      {{/each}}
+                  </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field center-elements">
+            <div class="control is-centered">
+              <button class="button is-link" id="submitBtn">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-light" id="cancelBtn">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<!--Event List-->
+
+<section class="is-centered" id="event-list">
+
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="/javascript/homepage-search.js"></script>
