@@ -1,4 +1,10 @@
-# Gopher-2.0 Elevator Pitch
+# Gopher-2.0
+
+## Delployed Application
+
+[Deployed Application](https://thawing-fortress-75852.herokuapp.com/)
+
+## Elevator Pitch
 
 **Gopher 2.0** is an updated version of the **Gopher 1.0** project which was collaboratively created in June 2021.
 **Gopher 1.0** was a static webpage which was meant to be an event finder to help users find events in their area that they may be
@@ -101,13 +107,6 @@ safer and easier for event-seekers to **Gopher it.**
   
   <br/>
 
-  ## Deployment
-  To see a deployed and live **Gopher 2.0**, please follow this link: <br/>
-  https://thawing-fortress-75852.herokuapp.com/
-  <br/>
-  ## Mobile View of Gopher 2.0
-  <br/>
-  
  ![Project 1 - Gopher](https://user-images.githubusercontent.com/83102464/130361801-365ee253-4fd9-43f7-9191-57fb545d069b.jpg)
 
   ## License
